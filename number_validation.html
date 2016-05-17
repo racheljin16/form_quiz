@@ -9,23 +9,22 @@
 	<div class="container">
 		<form>
 		  Name:<br>
-		  <input type="text" name="name">
+		  <input type="text" name="name" id="name">
 		  <br>
 		  <br>
 		  Email:<br>
-		  <input type="text" name="email">
+		  <input type="text" name="email" id="email">
 		  <br>
 		  <br>
 		  Current City:<br>
-		  <input type="text" name="city">
+		  <input type="text" name="city" id="city">
 		  <br>
 		  <br>
 		  Zip Code:<br>
-		  <input type="text" name="zipcode" id="zip" min="5" max="5">
+		  <input type="text" name="zipcode" id="zip" >
 		  <br>
 		  <br>
 		  <button type="button" onclick="myFunction()">Submit</button>
-		  <!-- <button type="submit" name="submit" value="Submit" onclick="allnumeric(document.form1.text1)"></button> -->
 		</form>
 		<br>
 		<br>
@@ -49,6 +48,16 @@
 			      document.getElementById("alert").innerHTML = text;   
 			   	};
 			
-		</script>
+	</script>
+
+	<script>
+		$(function(){
+			$.getJSON( "students.json", function() {
+           		$('#name').localStorage.setItem();
+
+		  });
+	});
+	})
+	</script>
 </body>
 </html>
