@@ -1,0 +1,5 @@
+{"students":[
+    {"name":"John", "email":"john@art.edu", "city":"San Francisco", "zipcode":"94501"},
+    {"name":"Ann", "email":"ann@art.edu", "city":"San Jose", "zipcode":"95134"},
+    {"name":"Max", "email":"max@art.edu", "city":"Fremont", "zipcode":"94538"}
+]}
