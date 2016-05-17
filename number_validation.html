@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<title>form</title>
+</head>
+<body>
+	<div class="container">
+		<form>
+		  Name:<br>
+		  <input type="text" name="name">
+		  <br>
+		  <br>
+		  Email:<br>
+		  <input type="text" name="email">
+		  <br>
+		  <br>
+		  Current City:<br>
+		  <input type="text" name="city">
+		  <br>
+		  <br>
+		  Zip Code:<br>
+		  <input type="text" name="zipcode" id="zip" min="5" max="5">
+		  <br>
+		  <br>
+		  <button type="button" onclick="myFunction()">Submit</button>
+		  <!-- <button type="submit" name="submit" value="Submit" onclick="allnumeric(document.form1.text1)"></button> -->
+		</form>
+		<br>
+		<br>
+
+		<p id="alert" style="color: red"></p>
+	</div>
+
+	<script>
+
+
+	function myFunction(){  
+			      var numbers = /^[0-9]+$/; 
+			      var text;
+			      
+
+			      if(zip.value.match(numbers)){  
+			      	text = "Zip Code OK";  
+			      }  else {  
+			      	text = "Zip Code not valid"; 
+			      } 
+			      document.getElementById("alert").innerHTML = text;   
+			   	};
+			
+		</script>
+</body>
+</html>
