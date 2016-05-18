@@ -30,8 +30,10 @@
 		<br>
 
 		<p id="alert" style="color: red"></p>
+		<p id="students"></p>
 	</div>
-
+	
+	<script   src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 	<script>
 
 
@@ -46,18 +48,30 @@
 			      	text = "Zip Code not valid"; 
 			      } 
 			      document.getElementById("alert").innerHTML = text;   
+			      var student_info = "";
+			      var students = JSON.parse(localStorage.getItem("students"));
+			      console.log(students);
+			      for (var i = 0; i < students.length; ++i) {
+			      	student_info += students[i]['name'] + ',';
+			      	student_info += students[i]['email'] + ',';
+			      	student_info += students[i]['city'] + ',';
+			      	student_info += students[i]['zipcode'] + '<br>';
+			      }
+			      console.log(student_info);
+			      document.getElementById("students").innerHTML = student_info;
 			   	};
 			
 	</script>
 
 	<script>
 		$(function(){
-			$.getJSON( "students.json", function() {
-           		$('#name').localStorage.setItem();
-
+			$.getJSON( "http://www.ruicongjin.com/AAU/WNM617/jsonquiz/students.json", function(jd) {
+				var students = jd.students;
+				console.log(students);
+				localStorage.removeItem("students");
+           		localStorage.setItem("students", JSON.stringify(jd.students));
 		  });
 	});
-	})
 	</script>
 </body>
 </html>
